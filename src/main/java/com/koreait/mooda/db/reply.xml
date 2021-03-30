@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 클래스에서 Diary로 이름을 사용하겠다! -->
+<mapper namespace="Reply">
+
+	<resultMap type="com.koreait.mooda.reply.ReplyDTO"
+		id="replyList">
+		<id column="r_idx" property="r_idx" />
+		<result column="r_useridx" property="r_useridx" />
+		<result column="r_cidx" property="r_cidx" />
+		<result column="r_text" property="r_text" />
+		<result column="r_regdate" property="r_regdate" />
+		<result column="r_report" property="r_report"/>
+	</resultMap>
+	<!--tb_reply에서 각 dto 객체들을 모두 담은 arrayList형태로 반환해주면됨 -->
+	<select id="list" resultMap="replyList">
+		select * from tb_reply order by r_idx;
+	</select>
+</mapper>
+	
+	

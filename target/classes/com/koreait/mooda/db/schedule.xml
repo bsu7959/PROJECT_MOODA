@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 클래스에서 Schedule로 이름을 사용하겠다! -->
+<mapper namespace="Schedule">
+
+	<resultMap type="com.koreait.mooda.schedule.ScheduleDTO"
+		id="scheduleList">
+		<id column="s_idx" property="s_idx" />
+		<result column="s_useridx" property="s_useridx" />
+		<result column="s_alarm" property="s_alarm" />
+		<result column="s_date" property="s_date" />
+		<result column="s_time" property="s_time" />
+		<result column="s_content" property="s_content" />
+		<result column="s_latitude" property="s_latitude" />
+		<result column="s_longitude" property="s_longitude" />
+	</resultMap>
+	<!--tb_schedule에서 각 dto 객체들을 모두 담은 arrayList형태로 반환해주면됨 -->
+	<select id="list" resultMap="scheduleList">
+		select * from tb_schedule order by s_idx;
+	</select>
+</mapper>
+	
+	
