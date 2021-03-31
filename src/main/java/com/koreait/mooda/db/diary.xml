@@ -23,4 +23,17 @@
 	<select id="list" resultMap="diaryList">
 		select * from tb_diary order by d_idx;
 	</select>
+	
+	<select id="moodcount" >
+	select count(case when d_mood='1' THEN 1 END) as moodcount1,
+	count(case when d_mood='2' THEN 1 END) as moodcount2, 
+    count(case when d_mood='3' THEN 1 END) as moodcount3,
+    count(case when d_mood='4' THEN 1 END) as moodcount4,
+    count(case when d_mood='5' THEN 1 END) as moodcount5,
+    count(case when d_mood='6' THEN 1 END) as moodcount6,
+    count(case when d_mood='7' THEN 1 END) as moodcount7,
+	count(case when d_mood='8' THEN 1 END) as moodcount8,
+	count(case when d_mood='9' THEN 1 END) as moodcount9 From tb_diary;
+	
+	</select>
 </mapper>
