@@ -20,6 +20,7 @@ public class MemberDTO {
 	private String m_report;
 	private String m_fontStyle;
 	private String m_fontSize;
+	private String m_background;
 	
 	public Long getM_idx() {
 		return m_idx;
@@ -134,6 +135,12 @@ public class MemberDTO {
 	}
 	public void setM_fontSize(String m_fontSize) {
 		this.m_fontSize = m_fontSize;
+	}
+	public String getM_background() {
+		return m_background;
+	}
+	public void setM_background(String m_background) {
+		this.m_background = m_background;
 	}
 	
 	

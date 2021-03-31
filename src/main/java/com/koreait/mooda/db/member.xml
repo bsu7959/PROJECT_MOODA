@@ -37,4 +37,7 @@
   	<update id="fontStyle" parameterType="String">
   		update tb_member set m_font_style=#{fontStyle} where m_userid="bsu7959"
   	</update>
+  	<update id="background" parameterType="String">
+  		update tb_member set m_background=#{background} where m_userid="bsu7959"
+  	</update>
 </mapper>

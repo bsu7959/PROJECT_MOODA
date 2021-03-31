@@ -80,4 +80,12 @@ public class MemberDAO {
 		return "다래 손글씨체";
 	}
 	
+	public String background(String background) {
+		if(sqlsession.update("Member.background", background) == 1) {
+			return background;
+		}
+		return "rgb(237,237,229)";
+			
+	}
+	
 }

@@ -62,9 +62,17 @@
     							xhr.onreadystatechange = function() {
     								if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
     									const result = xhr.responseText;
+    									backgroundSet(result);
     								}
     							}
                         	}
+                        	
+                        	function backgroundSet(background) {
+                        		$('body').css("background", background);
+                        	}
+                        //	$(function() {
+                        ///		backgroundSet(background);
+                        //	});
                         </script>
 <%
 
