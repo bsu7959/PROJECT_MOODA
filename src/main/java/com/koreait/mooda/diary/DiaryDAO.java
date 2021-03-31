@@ -11,6 +11,7 @@ import com.koreait.mooda.db.SqlMapConfig;
 public class DiaryDAO {
 
 	List<DiaryDTO> diaryList = new ArrayList<>();
+	List<Integer> mcList = new ArrayList<>();
 	SqlSessionFactory ssf = SqlMapConfig.getSqlMapInstance();
 	SqlSession sqlsession;
 	
@@ -22,5 +23,11 @@ public class DiaryDAO {
 	public List<DiaryDTO> getDiaryList(){
 		diaryList = sqlsession.selectList("Diary.list");
 		return diaryList;
+	}
+	
+	public List<Integer> moodCount(String d_useridx){
+		mcList = sqlsession.selectList("Diary.moodcount");
+		
+		return mcList;
 	}
 }
